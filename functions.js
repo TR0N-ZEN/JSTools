@@ -14,7 +14,8 @@ const sumList = (xs) =>
 const map = (f, xs) =>
 {
 	let ys = [];
-	for (let i=0;i<xs.length;i++) { y[i] = f(xs[i]); }
+	for (let i=0;i<xs.length;i++) { ys[i] = f(xs[i]); }
+	return ys;
 }
 
 const getRandomElement = (/*array*/array) =>
