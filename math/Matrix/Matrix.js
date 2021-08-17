@@ -1,5 +1,4 @@
 //const sumList = require("../functions.js");
-//module.exports.Matrix = Matrix;
 
 class Matrix
 {
@@ -21,10 +20,8 @@ class Matrix
 	set(r,c,value) { this.entries[c-1][r-1] = value; }
 	get(r,c) { return this.entries[c-1][r-1]; }
 	setColumn(n,v) { for(let r=1;r<=v.length;r++) { this.set(r,n,v[r-1]); } }
-	setCol = this.setColumn;
 	setRow(n,v) { for(let c=1;c<=v.length;c++) { this.set(n,c,v[c-1]); } }
 	getColumn(c) { let column=[]; for(let r=1;!(r>Matrix.rows(this));r++) { column[r-1] = this.get(r,c); }; return column; };
-	getCol = this.getColumn;
 	getRow(r) { let row=[]; for(let c=1;!(c>Matrix.columns(this));c++) { row[c-1] = this.get(r,c); }; return row; }
 	static scalarMul (s,m) // s -scalar; m - matrix
 	{
@@ -60,4 +57,5 @@ class Matrix
 		for(let r=1;!(r>Matrix.rows(m));r++) { console.log(m.getRow(r)); }
 		console.log();
 	}
-}
+} module.exports.Matrix = Matrix;
+
