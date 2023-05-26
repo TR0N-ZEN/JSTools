@@ -4,8 +4,7 @@ class Point extends SVG // SVG orperates in 2D only
 	constructor(x,y,id=undefined)
 	{
 		super();
-		if (id!=undefined) { this.id = id; }
-		else { this.id = SVG.id++ };
+		this.id = id!=undefined ? id : this.id = SVG.id++
 		this.x = x;
 		this.y = y;
 		Point.points.push(this);
@@ -30,8 +29,7 @@ class Point extends SVG // SVG orperates in 2D only
 				let z = matrix.get(3,1);
 				let xp = (matrix.get(1,1)*SVG.z0)/(SVG.z0-z);
 				let yp = (matrix.get(2,1)*SVG.z0)/(SVG.z0-z);
-				if(id!=undefined) { return new Point(xp,yp,id); }
-				else { return new Point(xp,yp); }
+				return id!=undefined ? new Point(xp,yp,id) : new Point(xp,yp);
 		}
 	}
 	static draw (p,color="orange",r=0.5,svg_container=document.getElementById("coordinate_system"))
